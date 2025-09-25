@@ -1,0 +1,117 @@
+Product Requirements Document (PRD) – Voy-a (MVP)
+
+1. Vision
+
+Voy-a is a travel platform that transforms the chaos of saved content from Instagram, TikTok, and
+Pinterest into a structured trip itinerary. Instead of scattered screenshots and bookmarks, Voy-a
+consolidates inspirations into a map, itinerary, and style board, tailored to the traveler’s trip dates and
+hotel location.
+
+2. Core Value Proposition
+
+- Before the Trip: Collect all saved spots (restaurants, shops, museums, neighborhoods, outfits) in one
+place.
+
+- During the Trip: Instantly view them on a map around your hotel, with an auto-generated itinerary and
+style board/outfits section.
+
+- After the Trip: Preserve memories and recommendations, keeping them organized for future reuse or
+sharing.
+
+3. MVP Scope (Phase 1)
+
+Must-Haves
+
+1. Manual Add Flow: Input fields (Place name, URL, category, notes). Geocode location (Google
+Maps/Mapbox). Save entry to dashboard.
+
+2. Dashboard (Web Application): Map View with pins, List View with quick links, Itinerary Builder.
+
+3. Trip Setup: Inputs city, dates, hotel. Dashboard updates accordingly.
+
+4. Outfit Board: Upload/save outfit posts separately as a gallery.
+
+5. Landing Page: Minimal, clean, value explanation, signup/waitlist.
+
+Should-Haves (Phase 1.5)
+
+- Chrome Extension/Mobile Clip: Save directly from URLs.
+
+- Trip Export: PDF/shareable itinerary.
+
+- Smart Suggestions: Group nearby spots by day.
+
+4. Users & Personas
+
+1. Gen Z Traveler (18–30): Social media–driven, saves content before trips.
+
+2. Urban Explorer: Seeks food, shopping, and cultural spots.
+
+3. Planner Type: Loves to organize; wants map + itinerary.
+
+5. User Flow (MVP)
+
+1. User signs up ﬁ Creates new trip (city, dates, hotel).
+
+2. User manually adds places (name, link, category).
+
+3. Voy-a generates dashboard with Map, Itinerary, Outfits.
+
+6. Tech & Design Requirements
+
+- Platform: Web app first (mobile responsive).
+
+- Backend: Supabase/Firebase.
+
+- Frontend: Next.js/React.
+
+- Mapping: Google Maps or Mapbox.
+
+- Design: Minimal, modern (Notion meets Google Maps).
+
+- Deployment: Vercel/Netlify, Firebase/Supabase backend.
+
+7. Deliverables (MVP)
+
+- Landing page with email capture.
+
+- Web dashboard: trip setup, map, itinerary, outfits.
+
+- Admin handover: Source code, deployment, env vars, design files.
+
+8. Success Metrics (MVP)
+
+- Create a trip in <2 minutes.
+- Add ‡5 places without errors.
+
+- Saved spots displayed on map & itinerary.
+
+- Landing page captures X signups.
+
+9. Risks & Assumptions
+
+Risks
+
+- Social API integration delays.
+
+- Mapping/geocoding costs with growth.
+
+- Competitors with similar features.
+
+Assumptions
+
+- Users value consolidation of saved posts.
+
+- Manual entry is acceptable for MVP.
+
+- Gen Z/millennials save social content pre-trip.
+
+10. Roadmap & Timeline
+
+- Phase 1 (0–3 months): MVP build, landing page waitlist.
+
+- Phase 1.5 (3–6 months): Chrome extension, trip export, suggestions.
+
+- Phase 2 (6–12 months): Mobile app, social features, partnerships.
+
+
