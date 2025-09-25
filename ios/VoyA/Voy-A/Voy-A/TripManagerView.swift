@@ -31,25 +31,15 @@ struct TripManagerView: View {
                     .listRowBackground(Color.clear)
                 } else {
                     ForEach(trips) { trip in
-                        let isSelected = trip.id == currentTripId
-                        let currentTripIdString = currentTripId?.uuidString ?? "nil"
-                        print("ForEach evaluating trip \(trip.city): isSelected = \(isSelected), currentTripId = \(currentTripIdString)")
-                        
-                        TripRowView(trip: trip, isSelected: isSelected) {
-                            print("Tap to open tapped for trip: \(trip.city)")
-                            print("Current showingTripSummary: \(showingTripSummary)")
+                        TripRowView(trip: trip, isSelected: trip.id == currentTripId) {
                             selectedTrip = trip
                             // Small delay to ensure state is properly set
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                 showingTripSummary = true
-                                print("Set showingTripSummary to: \(showingTripSummary)")
                             }
                         } onEdit: {
-                            print("Edit button tapped for trip: \(trip.city)")
-                            print("Setting editingTrip and showingEditSheet = true")
                             editingTrip = trip
                             showingEditSheet = true
-                            print("showingEditSheet is now: \(showingEditSheet)")
                         }
                     }
                     .onDelete(perform: deleteTrips)
@@ -211,8 +201,6 @@ struct TripRowView: View {
     }
     
     var body: some View {
-        let _ = print("TripRowView for \(trip.city): isSelected = \(isSelected)")
-        
         HStack {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
@@ -245,7 +233,6 @@ struct TripRowView: View {
                     Spacer()
                     HStack(spacing: 12) {
                         Button(action: {
-                            print("Edit button tapped for: \(trip.city)")
                             let impactFeedback = UIImpactFeedbackGenerator(style: .light)
                             impactFeedback.impactOccurred()
                             onEdit()
@@ -264,7 +251,6 @@ struct TripRowView: View {
                         .animation(.easeInOut(duration: 0.1), value: false)
                         
                         Button(action: {
-                            print("Tap to open tapped for: \(trip.city)")
                             let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
                             impactFeedback.impactOccurred()
                             onTap()
