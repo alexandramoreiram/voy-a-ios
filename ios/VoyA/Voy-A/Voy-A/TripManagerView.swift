@@ -32,6 +32,8 @@ struct TripManagerView: View {
                 } else {
                     ForEach(trips) { trip in
                         TripRowView(trip: trip, isSelected: trip.id == currentTripId) {
+                            // Load the trip immediately to update the checkmark
+                            loadTrip(trip)
                             selectedTrip = trip
                             // Small delay to ensure state is properly set
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -128,6 +130,7 @@ struct TripManagerView: View {
         refreshID = UUID()
         let newTripIdString = currentTripId?.uuidString ?? "nil"
         print("Set currentTripId to: \(newTripIdString)")
+        print("Checkmark should now show for trip: \(trip.city)")
         
         // Load places for this trip
         if let tripFolder = store.tripFolderURL(for: trip) {
@@ -201,6 +204,7 @@ struct TripRowView: View {
     }
     
     var body: some View {
+        let _ = print("TripRowView for \(trip.city): isSelected = \(isSelected)")
         HStack {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
